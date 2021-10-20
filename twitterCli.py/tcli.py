@@ -6,6 +6,7 @@
 #   - Delete Tweets
 #   - Follow and Unfollow users
 #   - Filter (Delete) tweets based on specific words (don't get cancelled for past offensive tweets)
+#   - Change Bio
 #
 #
 # by 2021 Devarshi Patel <devarshi.patel@ryerson.ca>, Toronto
