@@ -18,9 +18,11 @@ Prerequisite setup to the actual setup:
 
 1. Set up Virtual Environment (optional)
 - $ pip install virtualenv --user
-Then go into this project folder and set up the venv
+
+- Then go into this project folder and set up the venv
 - $ virtual venv
-Now activate the venv
+
+- Now activate the venv
 - $ . venv/bin/activate
 
 To quit the venv, use:
