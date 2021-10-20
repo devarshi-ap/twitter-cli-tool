@@ -139,3 +139,7 @@ def bio(new):
     print(f'Your current bio: {api.get_user(screen_name=MY_USERNAME).description}')
     api.update_profile(description=new)
     print(f'✅ Successfully updated your bio.')
+
+
+if __name__ == '__main__':
+    cli()
