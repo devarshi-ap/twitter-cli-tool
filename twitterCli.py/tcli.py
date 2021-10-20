@@ -32,3 +32,18 @@ auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 MY_USERNAME = 'your_username_here_without_@'
+
+
+@click.group()
+def cli():
+    """TWITTER CLI"""
+    pass
+
+
+# GET FOLLOWERS -> python3 tcli.py showfollowers -user='user_name'
+
+@cli.command()
+@click.option('-user', default=MY_USERNAME, help='list of followers')
+def showFollowers(user):
+    for friend in api.get_followers(screen_name=user):
+        print(friend.screen_name)
