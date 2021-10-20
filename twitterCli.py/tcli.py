@@ -47,3 +47,12 @@ def cli():
 def showFollowers(user):
     for friend in api.get_followers(screen_name=user):
         print(friend.screen_name)
+
+
+# GET FOLLOWING - python3 tcli.py showfollowing -user='user_name'
+
+@cli.command()
+@click.option('-user', default=MY_USERNAME, help='list of following')
+def showFollowing(user):
+    for friend in api.get_friends(screen_name=user):
+        print(friend.screen_name)
