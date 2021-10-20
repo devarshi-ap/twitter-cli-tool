@@ -65,3 +65,22 @@ def showFollowing(user):
 def twt(t):
     api.update_status(t)
     print('✅ Successfully tweeted!')
+
+
+# DELETE TWEETS -> python3 tcli.py dlt
+
+@cli.command()
+def dlt():
+    for status in tweepy.Cursor(api.user_timeline, screen_name=MY_USERNAME, tweet_mode="extended").items():
+        print(f'\n>>>>> "{status.full_text}"')
+        promptDelete = str(input('\tDelete? (y/n/q-quit): '))
+
+        if promptDelete.lower() == 'y':
+            print('\t--deleted tweet')
+            api.destroy_status(status.id)
+        elif promptDelete.lower() == 'n':
+            print('\t--untouched')
+        else:
+            print('\tquitting.')
+            break
+    print('✅ Done!\n')
