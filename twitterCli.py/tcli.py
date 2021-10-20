@@ -98,7 +98,7 @@ def flw(user):
         print(f'{user} isn\'t an existing username')
 
 
-# UNFOLLOW - python3 tcli.py unflw -user='user_name'
+# UNFOLLOW -> python3 tcli.py unflw -user='user_name'
 
 @cli.command()
 @click.option('-user', help='username to unfollow')
@@ -107,3 +107,24 @@ def unflw(user):
         if friend.screen_name == user:
             api.destroy_friendship(screen_name=friend.screen_name)
             print(f'✅ Successfully unfollowed {user}!')
+
+
+# CLEAN UP TWEETS -> python3 tcli.py cleanup -word='fag'
+
+@cli.command()
+@click.option('-word', help='username to unfollow')
+def cleanup(word):
+    for status in tweepy.Cursor(api.user_timeline, screen_name=MY_USERNAME, tweet_mode="extended").items():
+        if word in status.full_text:
+            print(f"\n>>>>> '{word}' was found in the following tweet:\n\t{status.full_text}")
+            promptDelete = str(input('Would you like to delete this tweet? (y-yes/ n-no/ other-quit): '))
+
+            if promptDelete.lower() == 'y':
+                print('\t--deleted tweet')
+                api.destroy_status(status.id)
+            elif promptDelete.lower() == 'n':
+                print('\t--untouched')
+            else:
+                print('\tquitting.')
+                break
+    print('✅ Done!\n')
