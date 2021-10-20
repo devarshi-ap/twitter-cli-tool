@@ -96,3 +96,14 @@ def flw(user):
         print(f'✅ Successfully followed {user}!')
     except Exception as e:
         print(f'{user} isn\'t an existing username')
+
+
+# UNFOLLOW - python3 tcli.py unflw -user='user_name'
+
+@cli.command()
+@click.option('-user', help='username to unfollow')
+def unflw(user):
+    for friend in tweepy.Cursor(api.get_friends).items():
+        if friend.screen_name == user:
+            api.destroy_friendship(screen_name=friend.screen_name)
+            print(f'✅ Successfully unfollowed {user}!')
