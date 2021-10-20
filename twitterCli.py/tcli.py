@@ -128,3 +128,14 @@ def cleanup(word):
                 print('\tquitting.')
                 break
     print('✅ Done!\n')
+
+
+# CHANGE BIO - python3 tcli.py bio -new='new_bio'
+# You'll be shown your current bio, but just know: passing the -new flag an empty string will clear your bio
+
+@cli.command()
+@click.option('-new', default='', help='update your bio')
+def bio(new):
+    print(f'Your current bio: {api.get_user(screen_name=MY_USERNAME).description}')
+    api.update_profile(description=new)
+    print(f'✅ Successfully updated your bio.')
