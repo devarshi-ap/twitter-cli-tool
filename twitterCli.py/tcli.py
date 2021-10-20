@@ -49,10 +49,19 @@ def showFollowers(user):
         print(friend.screen_name)
 
 
-# GET FOLLOWING - python3 tcli.py showfollowing -user='user_name'
+# GET FOLLOWING -> python3 tcli.py showfollowing -user='user_name'
 
 @cli.command()
 @click.option('-user', default=MY_USERNAME, help='list of following')
 def showFollowing(user):
     for friend in api.get_friends(screen_name=user):
         print(friend.screen_name)
+
+
+# TWEET -> python3 tcli.py twt -t 'something'
+
+@cli.command()
+@click.option('-t', default='still thinking 💭', help='string to tweet')
+def twt(t):
+    api.update_status(t)
+    print('✅ Successfully tweeted!')
