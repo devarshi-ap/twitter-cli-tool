@@ -35,6 +35,7 @@ To quit the venv, use:
 And your set!
 
 P.S.
+    
     1. If your confused as to how cli options and arguments work and are used, so that you may use the one's I've made, then you know... google it.
     
     2. I've also provided pretty semantic-fill-in-the-blank variable values for you to fill out for your values (ie. ur API credentials and YOUR twitter username).
