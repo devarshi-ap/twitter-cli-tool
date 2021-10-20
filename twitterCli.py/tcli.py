@@ -84,3 +84,15 @@ def dlt():
             print('\tquitting.')
             break
     print('✅ Done!\n')
+
+
+# FOLLOW -> python3 tcli.py flw -user='user_name'
+
+@cli.command()
+@click.option('-user', help='username to follow')
+def flw(user):
+    try:
+        api.create_friendship(screen_name=user)
+        print(f'✅ Successfully followed {user}!')
+    except Exception as e:
+        print(f'{user} isn\'t an existing username')
