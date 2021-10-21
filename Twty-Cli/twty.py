@@ -1,4 +1,4 @@
-# TWITTER COMMAND LINE INTERFACE TOOL
+# TWTY - TWITTER COMMAND LINE INTERFACE TOOL
 #
 # CLI supports the following methods:
 #   - List 'followers' and 'following' of given user
@@ -41,7 +41,7 @@ def cli():
     pass
 
 
-# GET FOLLOWERS -> python3 tcli.py showfollowers -user='user_name'
+# GET FOLLOWERS -> twty showfollowers -user='user_name'
 
 @cli.command()
 @click.option('-user', default=MY_USERNAME, help='list of followers')
@@ -50,7 +50,7 @@ def showFollowers(user):
         print(friend.screen_name)
 
 
-# GET FOLLOWING -> python3 tcli.py showfollowing -user='user_name'
+# GET FOLLOWING -> twty showfollowing -user='user_name'
 
 @cli.command()
 @click.option('-user', default=MY_USERNAME, help='list of following')
@@ -59,7 +59,7 @@ def showFollowing(user):
         print(friend.screen_name)
 
 
-# TWEET -> python3 tcli.py twt -t 'something'
+# TWEET -> twty twt -t 'something'
 
 @cli.command()
 @click.option('-t', default='still thinking 💭', help='string to tweet')
@@ -68,7 +68,7 @@ def twt(t):
     print('✅ Successfully tweeted!')
 
 
-# DELETE TWEETS -> python3 tcli.py dlt
+# DELETE TWEETS -> twty dlt
 
 @cli.command()
 def dlt():
@@ -87,7 +87,7 @@ def dlt():
     print('✅ Done!\n')
 
 
-# FOLLOW -> python3 tcli.py flw -user='user_name'
+# FOLLOW -> twty flw -user='user_name'
 
 @cli.command()
 @click.option('-user', help='username to follow')
@@ -99,7 +99,7 @@ def flw(user):
         print(f'{user} isn\'t an existing username')
 
 
-# UNFOLLOW -> python3 tcli.py unflw -user='user_name'
+# UNFOLLOW -> twty unflw -user='user_name'
 
 @cli.command()
 @click.option('-user', help='username to unfollow')
@@ -110,7 +110,7 @@ def unflw(user):
             print(f'✅ Successfully unfollowed {user}!')
 
 
-# CLEAN UP TWEETS -> python3 tcli.py cleanup -word='fag'
+# CLEAN UP TWEETS -> twty cleanup -word='fag'
 
 @cli.command()
 @click.option('-word', help='username to unfollow')
@@ -131,8 +131,7 @@ def cleanup(word):
     print('✅ Done!\n')
 
 
-# CHANGE BIO - python3 tcli.py bio -new='new_bio'
-# You'll be shown your current bio, but just know: passing the -new flag an empty string will clear your bio
+# CHANGE BIO - twty bio -new='new_bio'
 
 @cli.command()
 @click.option('-new', default='', help='update your bio')

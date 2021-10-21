@@ -1,0 +1,8 @@
+setup.py
+twty.py
+twty.egg-info/PKG-INFO
+twty.egg-info/SOURCES.txt
+twty.egg-info/dependency_links.txt
+twty.egg-info/entry_points.txt
+twty.egg-info/requires.txt
+twty.egg-info/top_level.txt
