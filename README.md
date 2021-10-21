@@ -31,9 +31,11 @@ To quit the venv, use:
 2. Install Dependencies
 - $ pip install tweepy
 - $ pip install click
+- $ pip install --editables .
 
 And your set!
 
+- $ twty --help
 
 P.S.
     
