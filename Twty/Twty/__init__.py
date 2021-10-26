@@ -20,19 +20,19 @@ import click
 
 print(f'tweepy version: {tweepy.__version__}\nclick version: {click.__version__}\n')
 
-# tweepy authentication tokens
+# tweepy authentication tokens, add your own from 
 
-consumer_key = 'xxxxxxxxxxxxx'
-consumer_secret = 'xxxxxxxxxxxxx'
-access_token = 'xxxxxxxxxxxxx'
-access_token_secret = 'xxxxxxxxxxxxx'
+consumer_key = 'xxx'
+consumer_secret = 'xx'
+access_token = 'xxx'
+access_token_secret = 'xxx'
 
 # Authentication
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
-MY_USERNAME = 'your_username_here_without_@'
+MY_USERNAME = 'your_@'
 
 
 @click.group()
@@ -46,6 +46,7 @@ def cli():
 @cli.command()
 @click.option('-user', default=MY_USERNAME, help='list of followers')
 def showFollowers(user):
+    print(f'followers of {user}:')
     for friend in api.get_followers(screen_name=user):
         print(friend.screen_name)
 
@@ -55,6 +56,7 @@ def showFollowers(user):
 @cli.command()
 @click.option('-user', default=MY_USERNAME, help='list of following')
 def showFollowing(user):
+    print(f'{user} follows:')
     for friend in api.get_friends(screen_name=user):
         print(friend.screen_name)
 
