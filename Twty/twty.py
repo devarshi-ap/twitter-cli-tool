@@ -22,17 +22,17 @@ print(f'tweepy version: {tweepy.__version__}\nclick version: {click.__version__}
 
 # tweepy authentication tokens, add your own from 
 
-consumer_key = 'xxx'
-consumer_secret = 'xx'
-access_token = 'xxx'
-access_token_secret = 'xxx'
+consumer_key = 'TektK3MCQB3mQ11adZmG2KeDK'
+consumer_secret = 'KUZJ0VwahufHOSIgqMWil8A01MnbpUh2j9dmeUXd9XQyMSexVx'
+access_token = '1295760434465775616-mg89HKYoVVcyhGSdcsBdO7z61mPfCh'
+access_token_secret = 'jR02pfw8cS36wRY42fjS8kw3QexuTXYNDsRUzCEtATDs7'
 
 # Authentication
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
-MY_USERNAME = 'your_@'
+MY_USERNAME = 'thefirstdev'
 
 
 @click.group()
