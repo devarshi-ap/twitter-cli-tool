@@ -18,12 +18,7 @@ Follow these steps to get started:
 <br>
 
 3. **_Clone this Repo_**
-    - clone the repo like so:
-    ```
-    $ cd <wherever you wanna setup the project>
-    $ git clone https://github.com/devarshi-ap/twitter-cli-tool.git
-    ```
-    - If you don't have [Git VCS](https://git-scm.com) installed, then just manually copy and paste the setup.py and twty.py file contents into ur IDE.
+
 <br>
 
 4. **_Install Dependencies_**
