@@ -30,24 +30,26 @@ Follow these steps to get started:
     - This project's dependencies incude: [_tweepy_](https://www.tweepy.org), [_click_](https://click.palletsprojects.com/en/8.0.x/), and _editables_.
     - Go to the project dir, and open the terminal and install the dependencies via:
     ```
-    $ pip install tweepy
-    $ pip install click
-    $ pip install --editables .
+    $ pip install tweepy click python-dotenv
     ```
 <br>
 
 5. **_Edit Authentication Values_**
-    - In twty.py, replace the values for the _consumer_key_, _consumer_secret_, _access_token_, and _access_token_secret_ with your values from the Twitter developer portal.
-    - Also, replace the _MY_USERNAME_ variable with your twitter handle (ie. MY_USERNAME='elonmusk')
+    - Create a .env file and add your Twitter developer credentials:
+    ```txt
+        CONSUMER_KEY = "add"
+        CONSUMER_SECRET = "your"
+        ACCESS_TOKEN = "credentials"
+        ACCESS_TOKEN_SECRET = "here"
+        MY_USERNAME = "and your twitter handle here" 
+    ```
 <br>
-
-NOTE: Alright, Imma be real with you, I'm not sure if the following terminal command is needed to be called, but just run it to be sure. (not the file path of twty.py or setup.py; the path of the folder they're both inside): ```$ pip install -e <project folder path>```
 
 <br>
 
 ---
 ## FollowsBack.py
-After reading the above instructions, After setting up with your own credentials and usernames and what not, just run the file in the terminal with:
+After having set up your twitter api keys in the dotenv, to use this program, just run the file in the terminal:
 ```
 $ python followsBack.py
 ```
@@ -60,11 +62,9 @@ This should print out a list of traitors whom you follow but don't follow you ba
 P.S.
     
     1. If your confused as to how cli options and arguments work and are used, so that you may use the one's I've made, then you know... google it.
-    
-    2. I've also provided pretty semantic-fill-in-the-blank variable values for you to fill out for your values (ie. ur API credentials and YOUR twitter username).
 
-    3. I've also commented, above the methods, after the '->'s, the actual commands you can run in the terminal.
+    2. I've also commented, above the methods, after the '->'s, the actual commands you can run in the terminal.
 
-    4. If you run into any problems, my contact info is on my site linked on my profile.
+    3. If you run into any problems, my contact info is on my site linked on my profile.
     
-    5. Suprisingly, when you use the tweepy library, you actually don't bite into your monthly rate limit for the actual Twitter API.)
+    4. Suprisingly, when you use the tweepy library, you actually don't bite into your monthly rate limit for the actual Twitter API.
