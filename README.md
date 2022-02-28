@@ -22,7 +22,6 @@ Follow these steps to get started:
 <br>
 
 4. **_Install Dependencies_**
-    - This project's dependencies incude: [_tweepy_](https://www.tweepy.org), [_click_](https://click.palletsprojects.com/en/8.0.x/), and _editables_.
     - Go to the project dir, and open the terminal and install the dependencies via:
     ```
     $ pip install tweepy click python-dotenv
