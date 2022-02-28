@@ -15,17 +15,21 @@
 
 import tweepy
 import click
+import os
+from dotenv import load_dotenv
 
 # library versions
 
 print(f'tweepy version: {tweepy.__version__}\nclick version: {click.__version__}\n')
 
-# tweepy authentication tokens, add your own from 
+# tweepy authentication tokens, add your own from .env
 
-consumer_key = 'abc'
-consumer_secret = 'easy'
-access_token = 'as'
-access_token_secret = '123'
+load_dotenv()
+
+consumer_key = os.getenv('CONSUMER_KEY')
+consumer_secret = os.getenv('CONSUMER_SECRET')
+access_token = os.getenv('ACCESS_TOKEN')
+access_token_secret = os.getenv('ACCESS_TOKEN_SECRET')
 
 # Authentication
 
