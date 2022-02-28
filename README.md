@@ -45,8 +45,6 @@ Follow these steps to get started:
     ```
 <br>
 
-<br>
-
 ---
 ## FollowsBack.py
 After having set up your twitter api keys in the dotenv, to use this program, just run the file in the terminal:
